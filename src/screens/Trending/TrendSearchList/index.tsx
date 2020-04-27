@@ -8,8 +8,7 @@ const TrendSearchList = () => {
     const [trendSearchList, setTrendSearchList] = useState([]);
 
     useEffect(() => {
-        gifService.getTrendList().then((res) => {
-            console.log(res);
+        gifService.getTrendSearchs().then((res) => {
             setTrendSearchList(res.data.data);
         });
     }, []);

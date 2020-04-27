@@ -13,8 +13,12 @@ const getGifList = (categoryName) => {
     );
 };
 
-const getTrendList = () => {
+const getTrendSearchs = () => {
     return axios.get(`${baseUrl}trending/searches?api_key=${API_KEY}`);
 };
 
-export default { getCategories, getGifList, getTrendList };
+const getTrendGifs = () => {
+    return axios.get(`${baseUrl}gifs/trending?api_key=${API_KEY}&limit=12`);
+};
+
+export default { getCategories, getGifList, getTrendSearchs, getTrendGifs };

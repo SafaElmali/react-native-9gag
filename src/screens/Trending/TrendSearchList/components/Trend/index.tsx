@@ -14,12 +14,12 @@ const Trend = ({ trend_name }: any) => {
 
 const styles = StyleSheet.create({
     trendBox: {
-        backgroundColor: '#000',
+        backgroundColor: '#E5E5E5',
         margin: 10,
         padding: 5,
     },
     trendTitle: {
-        color: '#fff',
+        color: '#000',
         fontWeight: '700',
         fontSize: 16,
     }
