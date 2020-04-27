@@ -11,15 +11,12 @@
         "prettier:write": "npx prettier --write **/*.{js,jsx,ts,tsx,json} && npx prettier --write *.{js,jsx,ts,tsx,json}"
     },
     "dependencies": {
-<<<<<<< HEAD
         "native-base": "^2.13.12",
-=======
         "@react-native-community/masked-view": "^0.1.10",
         "@react-navigation/drawer": "^5.5.0",
         "@react-navigation/native": "^5.1.6",
         "@react-navigation/stack": "^5.2.13",
         "axios": "^0.19.2",
->>>>>>> drawer navigation packages added
         "react": "16.11.0",
         "react-native": "0.62.2",
         "react-native-dotenv": "^0.2.0",
