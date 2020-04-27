@@ -17,6 +17,7 @@
         "@react-native-community/masked-view": "^0.1.10",
         "@react-navigation/drawer": "^5.5.0",
         "@react-navigation/native": "^5.1.6",
+        "@react-navigation/stack": "^5.2.13",
         "axios": "^0.19.2",
 >>>>>>> drawer navigation packages added
         "react": "16.11.0",
@@ -33,6 +34,7 @@
         "@react-native-community/eslint-config": "^1.0.0",
         "@types/jest": "^24.0.24",
         "@types/react-native": "^0.62.0",
+        "@types/react-native-dotenv": "^0.2.0",
         "@types/react-test-renderer": "16.9.2",
         "@typescript-eslint/eslint-plugin": "^2.29.0",
         "@typescript-eslint/parser": "^2.27.0",
