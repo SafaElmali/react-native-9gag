@@ -9,7 +9,6 @@ const Category = (props: any) => {
         gifService
             .getGifList(props.route.name)
             .then((res) => {
-                console.log(res);
                 setGifList(res.data.data);
             })
             .catch((err) => {

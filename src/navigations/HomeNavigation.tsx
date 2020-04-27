@@ -48,9 +48,9 @@ const Tab = createMaterialTopTabNavigator();
 
 const HomeTabs = () => {
     return (
-        <Tab.Navigator initialRouteName="Hot">
-            <Tab.Screen name="Hot" component={Category} />
+        <Tab.Navigator initialRouteName="Trending">
             <Tab.Screen name="Trending" component={TrendingScreen} />
+            <Tab.Screen name="Hot" component={Category} />
         </Tab.Navigator>
     );
 };
