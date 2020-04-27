@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Category from '../screens/Category/index';
-import Home from '../screens/Home/index';
 import gifService from '../config/gif-service';
-import HomeStack from './HomeNavigation';
+import HomeTabs from './HomeNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -23,7 +22,7 @@ const DrawerNavigation = () => {
 
     return (
         <Drawer.Navigator initialRouteName="Home">
-            <Drawer.Screen name="Home" component={HomeStack} />
+            <Drawer.Screen name="Home" component={HomeTabs} />
             {categoryList.map((category: any, index) => (
                 <Drawer.Screen
                     initialParams={category.name}
