@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { Image, Icon } from 'react-native-elements';
+import Video from 'react-native-video';
 import TrendSearchList from './TrendSearchList/index';
 import gifService from '../../config/gif-service';
 
@@ -30,10 +31,10 @@ const Trending = () => {
     );
 };
 
-const Gif = (props) => {
+const Gif = (props: any) => {
     console.log(props);
     return (
-        <View style={{ backgroundColor: 'yellow', marginVertical: 10 }}>
+        <View style={styles.postView}>
             <View style={styles.postHeaderView}>
                 <View style={styles.postHeaderLeft}>
                     <Image
@@ -48,17 +49,56 @@ const Gif = (props) => {
                     <Icon name="more-horiz" color="#A5A5A5" size={20} />
                 </View>
             </View>
-            <View style={{ flex: 1, backgroundColor: 'blue' }}>
-                <Image
-                    source={{
-                        uri:
-                            'https://i.pinimg.com/originals/fd/3c/cd/fd3ccd7b49e366b4206f5ac7f8fa8dac.gif'
+            <View style={styles.postBodyView}>
+                <Video
+                    repeat={false}
+                    source={{ uri: props.gif.images.downsized_small.mp4 }}
+                    style={{
+                        width: Number(props.gif.images.original_still.width),
+                        height: Number(props.gif.images.original_still.height)
                     }}
-                    style={{ width: 200, height: 200 }}
                 />
             </View>
-            <View style={{ flex: 1 }}>
-                <Text>Like Dislike</Text>
+            <View style={styles.postActionsView}>
+                <View style={styles.postActionsLeft}>
+                    <Icon
+                        name="arrow-up"
+                        type="entypo"
+                        color="#999999"
+                        size={32}
+                    />
+                    <Text style={styles.postActionText}>492</Text>
+                    <Icon
+                        name="arrow-down"
+                        type="entypo"
+                        color="#999999"
+                        size={32}
+                    />
+                    <Text style={styles.postActionText}>18</Text>
+                </View>
+                <View style={styles.postActionsRight}>
+                    <Icon
+                        name="comment"
+                        type="foundation"
+                        color="#999999"
+                        size={32}
+                    />
+                    <Text style={styles.postActionText}>69</Text>
+                    <Icon
+                        name="share"
+                        type="entypo"
+                        color="#999999"
+                        size={32}
+                    />
+                    <Text
+                        style={[
+                            styles.postActionText,
+                            { textTransform: 'uppercase' }
+                        ]}
+                    >
+                        Share
+                    </Text>
+                </View>
             </View>
         </View>
     );
@@ -69,14 +109,17 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff'
     },
-    postHeaderText: {
-        color: '#999'
+    postView: {
+        marginVertical: 10
     },
     postHeaderView: {
-        paddingHorizontal: 10,
         flex: 1,
+        padding: 10,
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    postHeaderText: {
+        color: '#999'
     },
     postHeaderRight: {
         flex: 3,
@@ -88,6 +131,31 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between'
+    },
+    postBodyView: {
+        flex: 1,
+        backgroundColor: '#000',
+        alignItems: 'center'
+    },
+    postActionsView: {
+        flex: 1,
+        flexDirection: 'row',
+        padding: 10
+    },
+    postActionsLeft: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
+    postActionsRight: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
+    },
+    postActionText: {
+        color: '#9999'
     }
 });
 
