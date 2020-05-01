@@ -33,7 +33,7 @@ const Trending = () => {
 const Gif = (props) => {
     console.log(props);
     return (
-        <View style={{ backgroundColor: 'red', marginVertical: 10 }}>
+        <View style={{ backgroundColor: 'yellow', marginVertical: 10 }}>
             <View style={styles.postHeaderView}>
                 <View style={styles.postHeaderLeft}>
                     <Image
@@ -48,7 +48,18 @@ const Gif = (props) => {
                     <Icon name="more-horiz" color="#A5A5A5" size={20} />
                 </View>
             </View>
-            <Text>Hello World</Text>
+            <View style={{ flex: 1, backgroundColor: 'blue' }}>
+                <Image
+                    source={{
+                        uri:
+                            'https://i.pinimg.com/originals/fd/3c/cd/fd3ccd7b49e366b4206f5ac7f8fa8dac.gif'
+                    }}
+                    style={{ width: 200, height: 200 }}
+                />
+            </View>
+            <View style={{ flex: 1 }}>
+                <Text>Like Dislike</Text>
+            </View>
         </View>
     );
 };
@@ -59,13 +70,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     postHeaderText: {
-        color: '#999',
+        color: '#999'
     },
     postHeaderView: {
         paddingHorizontal: 10,
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-between'
     },
     postHeaderRight: {
         flex: 3,
@@ -76,8 +87,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
-    },
+        justifyContent: 'space-between'
+    }
 });
 
 export default Trending;
