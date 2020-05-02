@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Image, Icon } from 'react-native-elements';
 import Video from 'react-native-video';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Gif = (props: any) => {
+    const [paused, setPaused] = useState(false);
+
+    const togglePlay = () => {
+        setPaused(!paused);
+    };
+
     return (
         <View style={styles.postView}>
             <View style={styles.postHeaderView}>
@@ -21,14 +28,45 @@ const Gif = (props: any) => {
                 </View>
             </View>
             <View style={styles.postBodyView}>
-                <Video
-                    repeat={false}
-                    source={{ uri: props.gif.images.downsized_small.mp4 }}
-                    style={{
-                        width: Number(props.gif.images.original_still.width),
-                        height: Number(props.gif.images.original_still.height)
-                    }}
-                />
+                <TouchableOpacity onPress={togglePlay}>
+                    <Video
+                        repeat={true}
+                        paused={paused}
+                        source={{ uri: props.gif.images.downsized_small.mp4 }}
+                        style={{
+                            width: Number(
+                                props.gif.images.original_still.width
+                            ),
+                            height: Number(
+                                props.gif.images.original_still.height
+                            )
+                        }}
+                    />
+                </TouchableOpacity>
+                {paused ? (
+                    <View
+                        style={{
+                            position: 'absolute',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            width: 100,
+                            height: 100,
+                            borderRadius: 50,
+                            backgroundColor: '#000',
+                            opacity: 0.7
+                        }}
+                    >
+                        <Text
+                            style={{
+                                color: '#fff',
+                                textTransform: 'uppercase',
+                                fontSize: 22
+                            }}
+                        >
+                            Gif
+                        </Text>
+                    </View>
+                ) : null}
             </View>
             <View style={styles.postActionsView}>
                 <View style={styles.postActionsLeft}>
@@ -107,8 +145,9 @@ const styles = StyleSheet.create({
     },
     postBodyView: {
         flex: 1,
-        backgroundColor: '#000',
-        alignItems: 'center'
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#000'
     },
     postActionsView: {
         flex: 1,
