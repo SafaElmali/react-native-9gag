@@ -7,6 +7,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import TrendingScreen from '../screens/Trending/index';
+import FollowingScreen from '../screens/Following/index';
+import FreshScreen from '../screens/Fresh/index';
 import Category from '../screens/Category/index';
 
 const Stack = createStackNavigator();
@@ -62,10 +64,7 @@ const HomeStack = (props: any) => {
                             <TouchableOpacity onPress={onHandleOpenDrawer}>
                                 <View>
                                     <Image
-                                        source={{
-                                            uri:
-                                                'https://avatars1.githubusercontent.com/u/17435062?s=400&u=e7c2ce6f6e920acaa793ddd105e91fa2c624c713&v=4'
-                                        }}
+                                        source={require('../assets/images/avatar.jpeg')}
                                         style={{
                                             width: 30,
                                             height: 30,
@@ -104,9 +103,17 @@ const Tab = createMaterialTopTabNavigator();
 
 const HomeTabs = () => {
     return (
-        <Tab.Navigator initialRouteName="Trending">
-            <Tab.Screen name="Trending" component={TrendingScreen} />
+        <Tab.Navigator
+            initialRouteName="Trending"
+            tabBarOptions={{
+                labelStyle: { fontSize: 14, textTransform: 'none' },
+                tabStyle: { width: 100 }
+            }}
+        >
             <Tab.Screen name="Hot" component={Category} />
+            <Tab.Screen name="Trending" component={TrendingScreen} />
+            <Tab.Screen name="Fresh" component={FreshScreen} />
+            <Tab.Screen name="Following" component={FollowingScreen} />
         </Tab.Navigator>
     );
 };
