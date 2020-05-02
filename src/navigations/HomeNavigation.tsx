@@ -1,23 +1,18 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Image } from 'react-native';
-import { Icon } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import TrendingScreen from '../screens/Trending/index';
 import FollowingScreen from '../screens/Following/index';
 import FreshScreen from '../screens/Fresh/index';
 import Category from '../screens/Category/index';
+import HeaderRight from '../components/Header/HeaderRight/index';
+import HeaderLeft from '../components/Header/HeaderLeft/index';
 
 const Stack = createStackNavigator();
 
 const HomeStack = (props: any) => {
-    const onHandleOpenDrawer = () => {
-        props.navigation.openDrawer();
-    };
-
     return (
         <Stack.Navigator>
             <Stack.Screen
@@ -25,70 +20,8 @@ const HomeStack = (props: any) => {
                 component={HomeTabs}
                 options={{
                     headerTitleAlign: 'left',
-                    headerLeft: () => (
-                        <TouchableOpacity onPress={onHandleOpenDrawer}>
-                            <Icon
-                                name="view-headline"
-                                type="material-community"
-                                size={32}
-                                containerStyle={{ paddingLeft: 10 }}
-                                iconStyle={{ color: '#999999' }}
-                            />
-                        </TouchableOpacity>
-                    ),
-                    headerRight: () => (
-                        <View
-                            style={{
-                                flex: 1,
-                                flexDirection: 'row',
-                                alignItems: 'center'
-                            }}
-                        >
-                            <TouchableOpacity onPress={onHandleOpenDrawer}>
-                                <Icon
-                                    name="search"
-                                    type="evilicon"
-                                    size={32}
-                                    iconStyle={{ color: '#999999' }}
-                                    containerStyle={{ marginHorizontal: 12 }}
-                                />
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={onHandleOpenDrawer}>
-                                <Icon
-                                    name="notifications"
-                                    type="material"
-                                    size={28}
-                                    iconStyle={{ color: '#999999' }}
-                                />
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={onHandleOpenDrawer}>
-                                <View>
-                                    <Image
-                                        source={require('../assets/images/avatar.jpeg')}
-                                        style={{
-                                            width: 30,
-                                            height: 30,
-                                            borderRadius: 50,
-                                            marginHorizontal: 20
-                                        }}
-                                    />
-                                    <View
-                                        style={{
-                                            position: 'absolute',
-                                            bottom: -2,
-                                            right: 14,
-                                            width: 15,
-                                            height: 15,
-                                            backgroundColor: '#40FE34',
-                                            borderRadius: 50,
-                                            borderWidth: 2,
-                                            borderColor: '#fff'
-                                        }}
-                                    />
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                    ),
+                    headerLeft: () => <HeaderLeft />,
+                    headerRight: () => <HeaderRight />,
                     headerTitleStyle: {
                         fontWeight: 'bold',
                         fontSize: 18
