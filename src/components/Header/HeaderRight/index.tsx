@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Icon } from 'react-native-elements';
+import Search from '../../Search/index';
 
 const HeaderRight = (props) => {
     const onHandleOpenDrawer = () => {
