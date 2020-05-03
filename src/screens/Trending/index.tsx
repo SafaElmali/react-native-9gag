@@ -10,7 +10,6 @@ const Trending = () => {
 
     useEffect(() => {
         gifService.getTrendGifs().then((res) => {
-            console.log(res.data);
             setGifList(res.data.data);
         });
     }, []);

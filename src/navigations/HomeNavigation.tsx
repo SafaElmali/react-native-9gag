@@ -20,8 +20,8 @@ const HomeStack = (props: any) => {
                 component={HomeTabs}
                 options={{
                     headerTitleAlign: 'left',
-                    headerLeft: () => <HeaderLeft />,
-                    headerRight: () => <HeaderRight />,
+                    headerLeft: () => <HeaderLeft {...props} />,
+                    headerRight: () => <HeaderRight {...props} />,
                     headerTitleStyle: {
                         fontWeight: 'bold',
                         fontSize: 18
