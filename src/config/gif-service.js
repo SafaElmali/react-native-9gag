@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import axios from 'axios';
 import { API_KEY } from 'react-native-dotenv';
 
@@ -17,8 +18,8 @@ const getTrendSearchs = () => {
     return axios.get(`${baseUrl}trending/searches?api_key=${API_KEY}`);
 };
 
-const getTrendGifs = () => {
-    return axios.get(`${baseUrl}gifs/trending?api_key=${API_KEY}&limit=12`);
+const getTrendGifs = (offset = 0) => {
+    return axios.get(`${baseUrl}gifs/trending?api_key=${API_KEY}&limit=12&offset=${offset}`);
 };
 
 export default { getCategories, getGifList, getTrendSearchs, getTrendGifs };

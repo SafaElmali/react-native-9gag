@@ -5,7 +5,7 @@ import Video from 'react-native-video';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Gif = (props: any) => {
-    const [paused, setPaused] = useState(false);
+    const [paused, setPaused] = useState(true);
 
     const togglePlay = () => {
         setPaused(!paused);

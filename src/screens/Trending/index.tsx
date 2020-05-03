@@ -1,33 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, ActivityIndicator } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import TrendSearchList from './TrendSearchList/index';
 import gifService from '../../config/gif-service';
 import Gif from '../../components/Gif/index';
 
-const Trending = () => {
-    const [gifList, setGifList] = useState([]);
+export default class Trending extends React.Component {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            list: [],
+            offset: 0,
+            loading: false
+        };
+    }
 
-    useEffect(() => {
-        gifService.getTrendGifs().then((res) => {
-            setGifList(res.data.data);
+    componentDidMount() {
+        this.getTrendGifs();
+    }
+
+    renderFooter = () => {
+        console.log(this.state);
+        //it will show indicator at the bottom of the list when data is loading otherwise it returns null
+        if (!this.state.loading) return null;
+        return <ActivityIndicator style={{ color: '#000' }} />;
+    };
+
+    getTrendGifs = () => {
+        const { offset, list }: any = this.state;
+        this.setState({ loading: true });
+
+        gifService.getTrendGifs(offset).then((res) => {
+            if (!res.data.data) {
+                return;
+            }
+            this.setState({
+                list: list.concat(res.data.data),
+                offset: offset + 12,
+                loading: false,
+                isRefreshing: false
+            });
         });
-    }, []);
+    };
 
-    return (
-        <View style={styles.postListView}>
-            <TrendSearchList />
-            {gifList.length > 0 ? (
-                <FlatList
-                    showsHorizontalScrollIndicator={false}
-                    data={gifList}
-                    renderItem={({ item }) => <Gif gif={item} />}
-                    keyExtractor={(item: any) => item.id}
-                />
-            ) : null}
-        </View>
-    );
-};
+    render() {
+        const { list }: any = this.state;
+        return (
+            <View style={styles.postListView}>
+                <TrendSearchList />
+                {list.length > 0 ? (
+                    <FlatList
+                        showsHorizontalScrollIndicator={false}
+                        data={list}
+                        renderItem={({ item }) => <Gif gif={item} />}
+                        keyExtractor={(item: any) => item.id}
+                        onEndReached={() => this.getTrendGifs()}
+                        onEndReachedThreshold={0.4}
+                        ListFooterComponent={this.renderFooter.bind(this)}
+                    />
+                ) : null}
+            </View>
+        );
+    }
+}
 
 const styles = StyleSheet.create({
     postListView: {
@@ -83,5 +118,3 @@ const styles = StyleSheet.create({
         color: '#9999'
     }
 });
-
-export default Trending;
