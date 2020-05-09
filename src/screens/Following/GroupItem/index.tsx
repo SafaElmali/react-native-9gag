@@ -4,7 +4,6 @@ import { View, StyleSheet } from 'react-native';
 import FollowButton from './components/FollowButton';
 
 const GroupItem = (props: any) => {
-    console.log(props);
     return (
         <View style={{ flexDirection: 'row' }}>
             <View style={styles.itemView}>

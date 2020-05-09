@@ -40,10 +40,9 @@ const HomeTabs = () => {
             initialRouteName="Trending"
             tabBarOptions={{
                 labelStyle: { fontSize: 14, textTransform: 'none' },
-                tabStyle: { width: 100 }
             }}
         >
-            <Tab.Screen name="Hot" component={Category} />
+            {/* <Tab.Screen name="Hot" component={Category} /> */}
             <Tab.Screen name="Trending" component={TrendingScreen} />
             <Tab.Screen name="Fresh" component={FreshScreen} />
             <Tab.Screen name="Following" component={FollowingScreen} />

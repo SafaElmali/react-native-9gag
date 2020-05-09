@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native-elements';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import GroupItem from './GroupItem';
 
 const GROUPS = [
@@ -37,16 +37,18 @@ const GROUPS = [
 ];
 
 const Following = () => {
-    const groupRows = () => {
-        return GROUPS.map((group) => (
-            <GroupItem key={group.name} group={group} />
-        ));
-    };
-
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <Text style={styles.followingHeader}>Featured</Text>
-            <View style={{ flex: 1 }}>{groupRows()}</View>
+            <View style={{ flex: 1 }}>
+                <FlatList
+                    data={GROUPS}
+                    renderItem={({ item }) => (
+                        <GroupItem key={item.name} group={item} />
+                    )}
+                    keyExtractor={(item) => item.name}
+                />
+            </View>
         </View>
     );
 };

@@ -10,7 +10,7 @@ const getCategories = () => {
 
 const getGifList = (categoryName) => {
     return axios.get(
-        `${baseUrl}gifs/search?api_key=${API_KEY}&q=${categoryName}`
+        `${baseUrl}gifs/search?api_key=${API_KEY}&q=${categoryName}&limit=10`
     );
 };
 

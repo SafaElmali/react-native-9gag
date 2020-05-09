@@ -82,6 +82,7 @@ const Gif = (props: any) => {
                         type="entypo"
                         color="#999999"
                         size={32}
+                        containerStyle={{ marginStart: 15 }}
                     />
                     <Text style={styles.postActionText}>18</Text>
                 </View>
@@ -92,21 +93,16 @@ const Gif = (props: any) => {
                         color="#999999"
                         size={32}
                     />
-                    <Text style={styles.postActionText}>69</Text>
+                    <Text style={[styles.postActionText, { marginEnd: 20 }]}>
+                        69
+                    </Text>
                     <Icon
                         name="share"
                         type="entypo"
                         color="#999999"
                         size={32}
                     />
-                    <Text
-                        style={[
-                            styles.postActionText,
-                            { textTransform: 'uppercase' }
-                        ]}
-                    >
-                        Share
-                    </Text>
+                    <Text style={styles.postActionText}>Share</Text>
                 </View>
             </View>
         </View>
@@ -167,6 +163,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     postActionText: {
-        color: '#9999'
+        color: '#9999',
+        marginHorizontal: 5,
+        textTransform: 'uppercase'
     }
 });

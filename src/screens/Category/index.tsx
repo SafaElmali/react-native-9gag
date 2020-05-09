@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import gifService from '../../config/gif-service';
+import TrendSearchList from '../Trending/TrendSearchList';
+import Gif from '../../components/Gif';
 
 const Category = (props: any) => {
     const [gifList, setGifList] = useState([]);
+    const [offset, setOffset] = useState(0);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        getCategoryGifs();
+    }, []);
+
+    const getCategoryGifs = () => {
         gifService
             .getGifList(props.route.name)
             .then((res) => {
@@ -14,13 +22,30 @@ const Category = (props: any) => {
             .catch((err) => {
                 console.log(err);
             });
-    }, []);
+    };
 
     return (
-        <View style={{ flex: 1 }}>
-            <Text> Welcome to Category</Text>
+        <View style={styles.postListView}>
+            <TrendSearchList />
+            {gifList.length > 0 ? (
+                <FlatList
+                    showsHorizontalScrollIndicator={false}
+                    data={gifList}
+                    renderItem={({ item }) => <Gif gif={item} />}
+                    keyExtractor={(item: any) => item.id}
+                    onEndReached={() => getCategoryGifs()}
+                    onEndReachedThreshold={0.2}
+                />
+            ) : null}
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    postListView: {
+        flex: 1,
+        backgroundColor: '#fff'
+    }
+});
 
 export default Category;

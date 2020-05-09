@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Category from '../screens/Category/index';
 import gifService from '../config/gif-service';
 import HomeTabs from './HomeNavigation';
+import CategoryStack from './CategoryNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,7 +28,7 @@ const DrawerNavigation = () => {
                     initialParams={category.name}
                     key={index}
                     name={category.name}
-                    component={Category}
+                    component={CategoryStack}
                 />
             ))}
         </Drawer.Navigator>

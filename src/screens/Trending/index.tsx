@@ -20,7 +20,6 @@ export default class Trending extends React.Component {
     }
 
     renderFooter = () => {
-        console.log(this.state);
         //it will show indicator at the bottom of the list when data is loading otherwise it returns null
         if (!this.state.loading) return null;
         return <ActivityIndicator style={{ color: '#000' }} />;
