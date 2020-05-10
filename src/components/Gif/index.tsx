@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Image, Icon } from 'react-native-elements';
+import RNFetchBlob from 'rn-fetch-blob';
+import CameraRoll from '@react-native-community/cameraroll';
 import Video from 'react-native-video';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -9,6 +11,25 @@ const Gif = (props: any) => {
 
     const togglePlay = () => {
         setPaused(!paused);
+    };
+
+    const handleDownload = () => {
+        RNFetchBlob.config({
+            fileCache: true,
+            // by adding this option, the temp files will have a file extension
+            appendExt: 'mp4'
+        })
+            .fetch('GET', props.gif.images.looping.mp4) //<-- url here was like https://aws.s3.videofile.mp4 for example
+            .then((res) => {
+                saveToCameraRoll(res.path());
+            });
+    };
+
+    const saveToCameraRoll = (path) => {
+        CameraRoll.saveToCameraRoll(path).then((res) => {
+            console.log(res);
+            console.log('Success', 'Saved to camera roll!');
+        });
     };
 
     return (
@@ -23,7 +44,9 @@ const Gif = (props: any) => {
                     <Text style={styles.postHeaderText}>8h</Text>
                 </View>
                 <View style={styles.postHeaderRight}>
-                    <Icon name="bookmark" color="#A5A5A5" size={20} />
+                    <TouchableOpacity onPress={handleDownload}>
+                        <Icon name="bookmark" color="#A5A5A5" size={20} />
+                    </TouchableOpacity>
                     <Icon name="more-horiz" color="#A5A5A5" size={20} />
                 </View>
             </View>
