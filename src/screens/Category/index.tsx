@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
-import gifService from '../../config/gif-service';
+import gifService from '../../utils/networking/config/gif-service';
 import TrendSearchList from '../Trending/TrendSearchList';
 import Gif from '../../components/Gif';
 

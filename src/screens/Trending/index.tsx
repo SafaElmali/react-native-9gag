@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import TrendSearchList from './TrendSearchList/index';
-import gifService from '../../config/gif-service';
+import gifService from '../../utils/networking/config/gif-service';
 import Gif from '../../components/Gif/index';
 
 export default class Trending extends React.Component {
