@@ -193,6 +193,8 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation 'com.facebook.fresco:animated-gif:2.0.0' // to play gifs
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    compile project(':@react-native-community_cameraroll')
+
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

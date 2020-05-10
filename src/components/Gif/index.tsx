@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {
+    View,
+    Text,
+    StyleSheet,
+    Platform,
+    PermissionsAndroid
+} from 'react-native';
 import { Image, Icon } from 'react-native-elements';
 import RNFetchBlob from 'rn-fetch-blob';
 import CameraRoll from '@react-native-community/cameraroll';
@@ -13,16 +19,43 @@ const Gif = (props: any) => {
         setPaused(!paused);
     };
 
-    const handleDownload = () => {
-        RNFetchBlob.config({
-            fileCache: true,
-            // by adding this option, the temp files will have a file extension
-            appendExt: 'mp4'
-        })
-            .fetch('GET', props.gif.images.looping.mp4) //<-- url here was like https://aws.s3.videofile.mp4 for example
-            .then((res) => {
-                saveToCameraRoll(res.path());
-            });
+    const handleDownload = async () => {
+        if (Platform.OS === 'android') {
+            try {
+                const status = await PermissionsAndroid.request(
+                    PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+                    {
+                        title: 'Storage Permission',
+                        message:
+                            'My App needs access to your storage ' +
+                            'so you can save your medias'
+                    }
+                );
+
+                fetchBlob(status);
+            } catch (err) {
+                console.error('Failed to request permission ', err);
+                return null;
+            }
+        } else {
+            fetchBlob('granted');
+        }
+    };
+
+    const fetchBlob = (status) => {
+        if (status === 'granted') {
+            RNFetchBlob.config({
+                fileCache: true,
+                // by adding this option, the temp files will have a file extension
+                appendExt: 'mp4'
+            })
+                .fetch('GET', props.gif.images.looping.mp4) //<-- url here was like https://aws.s3.videofile.mp4 for example
+                .then((res) => {
+                    saveToCameraRoll(res.path());
+                });
+        } else {
+            console.log('permission denied');
+        }
     };
 
     const saveToCameraRoll = (path) => {
