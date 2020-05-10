@@ -6,9 +6,9 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import TrendingScreen from '../screens/Trending/index';
 import FollowingScreen from '../screens/Following/index';
 import FreshScreen from '../screens/Fresh/index';
-import Category from '../screens/Category/index';
 import HeaderRight from '../components/Header/HeaderRight/index';
 import HeaderLeft from '../components/Header/HeaderLeft/index';
+import Category from '../screens/Category';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +28,7 @@ const HomeStack = (props: any) => {
                     }
                 }}
             />
+            <Stack.Screen name="Trend Detail" component={Category} />
         </Stack.Navigator>
     );
 };
@@ -39,7 +40,7 @@ const HomeTabs = () => {
         <Tab.Navigator
             initialRouteName="Trending"
             tabBarOptions={{
-                labelStyle: { fontSize: 14, textTransform: 'none' },
+                labelStyle: { fontSize: 14, textTransform: 'none' }
             }}
         >
             {/* <Tab.Screen name="Hot" component={Category} /> */}

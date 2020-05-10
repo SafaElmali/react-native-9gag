@@ -4,7 +4,7 @@ import gifService from '../../../config/gif-service';
 import Trend from './components/Trend/index';
 import { FlatList } from 'react-native-gesture-handler';
 
-const TrendSearchList = () => {
+const TrendSearchList = (props) => {
     const [trendSearchList, setTrendSearchList] = useState([]);
 
     useEffect(() => {
@@ -20,7 +20,9 @@ const TrendSearchList = () => {
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     data={trendSearchList}
-                    renderItem={({ item }) => <Trend trend_name={item} />}
+                    renderItem={({ item }) => (
+                        <Trend {...props} trend_name={item} />
+                    )}
                     keyExtractor={(item) => item}
                 />
             ) : null}

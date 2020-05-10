@@ -46,7 +46,7 @@ export default class Trending extends React.Component {
         const { list }: any = this.state;
         return (
             <View style={styles.postListView}>
-                <TrendSearchList />
+                <TrendSearchList {...this.props} />
                 {list.length > 0 ? (
                     <FlatList
                         showsHorizontalScrollIndicator={false}

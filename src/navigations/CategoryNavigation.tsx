@@ -8,6 +8,7 @@ import CategoryScreen from '../screens/Category';
 
 const Tab = createMaterialTopTabNavigator();
 
+// To pass props we can use callback
 function CategoryTabNav(props: any) {
     return (
         <Tab.Navigator>

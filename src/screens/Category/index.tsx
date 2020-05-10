@@ -14,19 +14,30 @@ const Category = (props: any) => {
     }, []);
 
     const getCategoryGifs = () => {
-        gifService
-            .getGifList(props.route.name)
-            .then((res) => {
-                setGifList(res.data.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        if (!props.route.params) {
+            gifService
+                .getGifList(props.route.name)
+                .then((res) => {
+                    setGifList(res.data.data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        } else {
+            gifService
+                .getGifList(props.route.params.trend_name)
+                .then((res) => {
+                    setGifList(res.data.data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
     };
 
     return (
         <View style={styles.postListView}>
-            <TrendSearchList />
+            {!props.route.params ? <TrendSearchList {...props} /> : null}
             {gifList.length > 0 ? (
                 <FlatList
                     showsHorizontalScrollIndicator={false}

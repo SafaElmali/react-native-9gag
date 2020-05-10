@@ -2,11 +2,17 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Trend = ({ trend_name }: any) => {
+const Trend = (props: any) => {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity
+            onPress={() =>
+                props.navigation.navigate('Trend Detail', {
+                    trend_name: props.trend_name
+                })
+            }
+        >
             <View style={styles.trendView}>
-                <Text style={styles.trendTitle}>{trend_name}</Text>
+                <Text style={styles.trendTitle}>{props.trend_name}</Text>
             </View>
         </TouchableOpacity>
     );
