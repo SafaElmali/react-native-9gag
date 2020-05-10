@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import gifService from '../utils/networking/config/gif-service';
+import gifService from '../utils/networking/api/gif-service';
 import HomeTabs from './HomeNavigation';
 import CategoryStack from './CategoryNavigation';
 

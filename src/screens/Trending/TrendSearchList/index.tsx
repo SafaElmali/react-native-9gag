@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
-import gifService from '../../../utils/networking/config/gif-service';
+import gifService from '../../../utils/networking/api/gif-service';
 import Trend from './components/Trend/index';
 import { FlatList } from 'react-native-gesture-handler';
 
