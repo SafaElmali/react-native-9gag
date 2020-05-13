@@ -8,7 +8,7 @@ _Not actually. There is no image or video content for now. Just the Gif contents
 
 ## What Is This Repo/App ? 🤔
 
-- I wanted to try to make the clone application of the 9gag. There is no public api for 9gag. So I decided to use <a href="https://developers.giphy.com/">Giphy's dveleoper API</a> to get gif medias.
+- I wanted to try to make the clone application of the 9gag. There is no public api for 9gag. So I decided to use <a href="https://developers.giphy.com/">Giphy's develeoper API</a> to get gif medias.
 - I actually still working on the app for some feature implementations. 🤓
 - Feel free ask anything or make pull requests for app's issues or to improve the application 🥳 (performance optimization, styles etc.)
 
