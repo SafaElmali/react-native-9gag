@@ -1,11 +1,12 @@
-<font size="5"> 9gag Clone</font> <i>Well nearly (I guess? 😆)<i>
+## 9gag Clone App ? 🤔
 
+- Not actually There is no image or video content for now 😬 Just the Gif contents in the application. But I tried to implement the mobile design of the 9gag app 😊 
 
 ## What Is This Repo/App ? 🤔
 
 - I wanted to try to make the clone application of the 9gag. There is no public api for 9gag. So I decided to use <a href="https://developers.giphy.com/">Giphy's dveleoper API</a> to get gif medias.
 - I actually still working on the app for some feature implementations. 🤓
-- Feel free to make pull requests for my issues or to improve the application 🥳 (performance optimization, styles etc.)
+- Feel free ask anything or make pull requests for app's issues or to improve the application 🥳 (performance optimization, styles etc.)
 
 
 ## Home Page
@@ -20,6 +21,7 @@
 
 <p>You can checkout other features, Installation steps on <a href="https://github.com/SafaElmali/react-native-9gag.wiki.git">Wiki Page</a><p/>
 
+<p>You can checkout the todo board of the project 👉 <a href="https://github.com/SafaElmali/react-native-9gag/projects">Go To Board</a><p/>
 
 ## Toolbox Of This Project 🧰 
 
