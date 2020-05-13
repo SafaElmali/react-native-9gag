@@ -23,7 +23,7 @@ _Not actually. There is no image or video content for now. Just the Gif contents
 
 </div>
 
-<p>You can checkout other features, Installation steps on <a href="https://github.com/SafaElmali/react-native-9gag.wiki.git">Wiki Page</a><p/>
+<p>You can checkout other features, Installation steps on <a href="https://github.com/SafaElmali/react-native-9gag/wiki">Wiki Page</a><p/>
 
 <p>You can checkout the todo board of the project 👉 <a href="https://github.com/SafaElmali/react-native-9gag/projects">Go To Board</a><p/>
 
