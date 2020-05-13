@@ -13,6 +13,8 @@
 - Here is a little part of the app.
 - You can checkout other features, Installation steps on <a href="https://github.com/SafaElmali/react-native-9gag.wiki.git">Wiki Page</a>
 
+<div align="center">
 
 <img src="./demo/intro.gif" height=400>
 
+</div>
