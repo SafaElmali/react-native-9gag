@@ -1,6 +1,10 @@
-## 9gag Clone App ? 🤔
+<div align="center">
 
-- Not actually There is no image or video content for now 😬 Just the Gif contents in the application. But I tried to implement the mobile design of the 9gag app 😊 
+# 9gag Clone App
+
+- Not actually There is no image or video content for now. Just the Gif contents in the application. But I tried to implement the mobile design of the 9gag app 😊 
+
+</div>
 
 ## What Is This Repo/App ? 🤔
 
