@@ -2,7 +2,7 @@
 
 # 9gag Clone App
 
-_Not actually There is no image or video content for now. Just the Gif contents in the application. But I tried to implement the mobile design of the 9gag app_ 😊 
+_Not actually. There is no image or video content for now. Just the Gif contents in the application. But I tried to implement the mobile design of the 9gag app_ 😊 
 
 </div>
 
