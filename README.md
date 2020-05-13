@@ -32,7 +32,7 @@ _Not actually. There is no image or video content for now. Just the Gif contents
 - [react-native-community/cameraroll](https://github.com/react-native-community/react-native-cameraroll) (_Used to save media to gallery_)
 - [rn-fetch-blob](https://github.com/joltup/rn-fetch-blob) (_Used to save media to gallery_)
 - [react-navigation](https://reactnavigation.org/)(_Used to Routing and navigations_)
-- [react-native-video](https://github.com/react-native-community/react-native-video)(_Used to pause / start media feature. For now.)
+- [react-native-video](https://github.com/react-native-community/react-native-video)(_Used to pause / start media feature. For now._)
 - [axios](https://github.com/axios/axios) (_Used to make HTTP requests to <a href="https://developers.giphy.com/">Giphy API</a>_)
 - [react-native-dotenv](https://github.com/zetachang/react-native-dotenv) (_Used to import application configs from .env file_)
 - [react-native-elements](https://react-native-elements.github.io/react-native-elements/) (_React Native UI Toolkit_)
