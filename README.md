@@ -8,13 +8,25 @@
 - Feel free to make pull requests for my issues or to improve the application 🥳 (performance optimization, styles etc.)
 
 
-### Home Page
+## Home Page
 
 - Here is a little part of the app.
-- You can checkout other features, Installation steps on <a href="https://github.com/SafaElmali/react-native-9gag.wiki.git">Wiki Page</a>
 
 <div align="center">
 
-<img src="./demo/intro.gif" height=400>
+<img src="./demo/intro.gif" height=500>
 
 </div>
+
+<p>You can checkout other features, Installation steps on <a href="https://github.com/SafaElmali/react-native-9gag.wiki.git">Wiki Page</a><p/>
+
+
+## Toolbox Of This Project 🧰 
+
+- [react-native-community/cameraroll](https://github.com/react-native-community/react-native-cameraroll) (_Used to save media to gallery_)
+- [rn-fetch-blob](https://github.com/joltup/rn-fetch-blob) (_Used to save media to gallery_)
+- [react-navigation](https://reactnavigation.org/)(_Used to Routing and navigations_)
+- [react-native-video](https://github.com/react-native-community/react-native-video)(_Used to pause / start media feature. For now.)
+- [axios](https://github.com/axios/axios) (_Used to make HTTP requests to <a href="https://developers.giphy.com/">Giphy API</a>_)
+- [react-native-dotenv](https://github.com/zetachang/react-native-dotenv) (_Used to import application configs from .env file_)
+- [react-native-elements](https://react-native-elements.github.io/react-native-elements/) (_React Native UI Toolkit_)
