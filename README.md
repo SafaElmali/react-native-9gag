@@ -12,8 +12,7 @@ _Not actually. There is no image or video content for now. Just the Gif contents
 - I actually still working on the app for some feature implementations. 🤓
 - Feel free ask anything or make pull requests for app's issues or to improve the application 🥳 (performance optimization, styles etc.)
 
-
-## Home Page
+## Preview
 
 - Here is a little part of the app.
 
@@ -22,6 +21,8 @@ _Not actually. There is no image or video content for now. Just the Gif contents
 <img src="./demo/intro.gif" height=500>
 
 </div>
+
+## Wiki
 
 <p>You can checkout other features, Installation steps on <a href="https://github.com/SafaElmali/react-native-9gag/wiki">Wiki Page</a><p/>
 
@@ -36,3 +37,8 @@ _Not actually. There is no image or video content for now. Just the Gif contents
 - [axios](https://github.com/axios/axios) (_Used to make HTTP requests to <a href="https://developers.giphy.com/">Giphy API</a>_)
 - [react-native-dotenv](https://github.com/zetachang/react-native-dotenv) (_Used to import application configs from .env file_)
 - [react-native-elements](https://react-native-elements.github.io/react-native-elements/) (_React Native UI Toolkit_)
+
+## License
+
+react-native-9gag is [MIT licensed](./LICENSE).
+
